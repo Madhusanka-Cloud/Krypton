@@ -11,37 +11,28 @@
 <body class="min-h-screen bg-slate-50 font-sans text-slate-900">
 
     <nav class="sticky top-0 z-50 bg-white border-b border-slate-200 shadow-sm">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between h-20 items-center">
-            
-            <div class="flex items-center space-x-3 cursor-pointer" onclick="switchTab('home')">
-                <img src="Assests/logo.png" alt="Krypton Logo" class="h-12 w-auto object-contain">
-            </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                
+                <div class="flex items-center space-x-3 cursor-pointer" onclick="switchTab('home')">
+                    <img src="Assests/logo.png" alt="Krypton Logo" class="h-12 w-auto object-contain">
+                </div>
 
-            <div class="hidden md:flex space-x-1" id="desktop-nav">
-                <button onclick="switchTab('home')" data-tab="home" class="nav-btn active flex items-center space-x-2 px-4 py-2 rounded-lg transition-all">
-                    <i data-lucide="home" class="w-4 h-4"></i><span class="font-medium">Home</span>
-                </button>
-                <button onclick="switchTab('guidelines')" data-tab="guidelines" class="nav-btn flex items-center space-x-2 px-4 py-2 rounded-lg transition-all">
-                    <i data-lucide="shield-check" class="w-4 h-4"></i><span class="font-medium">SLS Guidelines</span>
-                </button>
-                <button onclick="switchTab('report')" data-tab="report" class="nav-btn flex items-center space-x-2 px-4 py-2 rounded-lg transition-all">
-                    <i data-lucide="camera" class="w-4 h-4"></i><span class="font-medium">Defect Analysis</span>
-                </button>
-                <button onclick="switchTab('feedback')" data-tab="feedback" class="nav-btn flex items-center space-x-2 px-4 py-2 rounded-lg transition-all">
-                    <i data-lucide="message-square" class="w-4 h-4"></i><span class="font-medium">Feedback</span>
-                </button>
-            </div>
+                <div class="hidden md:flex space-x-1" id="desktop-nav">
+                    <button onclick="switchTab('home')" data-tab="home" class="nav-btn active flex items-center space-x-2 px-4 py-2 rounded-lg transition-all">
+                        <i data-lucide="home" class="w-4 h-4"></i><span class="font-medium">Home</span>
+                    </button>
+                    <button onclick="switchTab('guidelines')" data-tab="guidelines" class="nav-btn flex items-center space-x-2 px-4 py-2 rounded-lg transition-all">
+                        <i data-lucide="shield-check" class="w-4 h-4"></i><span class="font-medium">SLS Guidelines</span>
+                    </button>
+                    <button onclick="switchTab('report')" data-tab="report" class="nav-btn flex items-center space-x-2 px-4 py-2 rounded-lg transition-all">
+                        <i data-lucide="camera" class="w-4 h-4"></i><span class="font-medium">Defect Analysis</span>
+                    </button>
+                    <button onclick="switchTab('feedback')" data-tab="feedback" class="nav-btn flex items-center space-x-2 px-4 py-2 rounded-lg transition-all">
+                        <i data-lucide="message-square" class="w-4 h-4"></i><span class="font-medium">Feedback</span>
+                    </button>
+                </div>
 
-            <div class="md:hidden">
-                <button onclick="toggleMenu()" class="p-2 text-indigo-900">
-                    <i data-lucide="menu" id="menu-icon"></i>
-                    <i data-lucide="x" id="close-icon" class="hidden"></i>
-                </button>
-            </div>
-        </div>
-    </div>
-</nav>             
                 <div class="md:hidden">
                     <button onclick="toggleMenu()" class="p-2 text-indigo-900">
                         <i data-lucide="menu" id="menu-icon"></i>
@@ -62,6 +53,9 @@
         
         <div id="tab-home" class="tab-content fade-in space-y-12">
             <div class="relative rounded-[2rem] overflow-hidden text-white p-8 md:p-20 shadow-2xl min-h-[550px] flex items-center bg-indigo-950">
+                
+                <img src="Assests/bg.png" alt="Krypton Skyline" class="absolute inset-0 w-full h-full object-cover z-0 opacity-50">
+
                 <div class="relative z-10 md:w-3/5">
                     <span class="bg-indigo-500 text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-6 inline-block">Pioneer & N Series Range</span>
                     <h1 class="text-4xl md:text-6xl font-black mb-6 leading-tight">Certified Safety. <br>Modern Elegance.</h1>
@@ -94,7 +88,6 @@
                 </div>
             </div>
         </div>
-
         <div id="tab-guidelines" class="tab-content hidden fade-in max-w-4xl mx-auto">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-black text-indigo-950 uppercase tracking-tight">Technical Compliance</h2>
@@ -218,5 +211,8 @@
         </div>
     </footer>
     <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>
