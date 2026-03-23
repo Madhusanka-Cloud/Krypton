@@ -11,28 +11,37 @@
 <body class="min-h-screen bg-slate-50 font-sans text-slate-900">
 
     <nav class="sticky top-0 z-50 bg-white border-b border-slate-200 shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-20 items-center">
-                
-                <div class="flex items-center space-x-3 cursor-pointer" onclick="switchTab('home')">
-                    <img src="Assests/logo.png" alt="Krypton Logo" class="h-12 w-auto object-contain">
-                </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-20 items-center">
+            
+            <div class="flex items-center space-x-3 cursor-pointer" onclick="switchTab('home')">
+                <img src="Assests/logo.png" alt="Krypton Logo" class="h-12 w-auto object-contain">
+            </div>
 
-                <div class="hidden md:flex space-x-1" id="desktop-nav">
-                    <button onclick="switchTab('home')" data-tab="home" class="nav-btn active flex items-center space-x-2 px-4 py-2 rounded-lg transition-all">
-                        <i data-lucide="home" class="w-4 h-4"></i><span class="font-medium">Home</span>
-                    </button>
-                    <button onclick="switchTab('guidelines')" data-tab="guidelines" class="nav-btn flex items-center space-x-2 px-4 py-2 rounded-lg transition-all">
-                        <i data-lucide="shield-check" class="w-4 h-4"></i><span class="font-medium">SLS Guidelines</span>
-                    </button>
-                    <button onclick="switchTab('report')" data-tab="report" class="nav-btn flex items-center space-x-2 px-4 py-2 rounded-lg transition-all">
-                        <i data-lucide="camera" class="w-4 h-4"></i><span class="font-medium">Defect Analysis</span>
-                    </button>
-                    <button onclick="switchTab('feedback')" data-tab="feedback" class="nav-btn flex items-center space-x-2 px-4 py-2 rounded-lg transition-all">
-                        <i data-lucide="message-square" class="w-4 h-4"></i><span class="font-medium">Feedback</span>
-                    </button>
-                </div>
+            <div class="hidden md:flex space-x-1" id="desktop-nav">
+                <button onclick="switchTab('home')" data-tab="home" class="nav-btn active flex items-center space-x-2 px-4 py-2 rounded-lg transition-all">
+                    <i data-lucide="home" class="w-4 h-4"></i><span class="font-medium">Home</span>
+                </button>
+                <button onclick="switchTab('guidelines')" data-tab="guidelines" class="nav-btn flex items-center space-x-2 px-4 py-2 rounded-lg transition-all">
+                    <i data-lucide="shield-check" class="w-4 h-4"></i><span class="font-medium">SLS Guidelines</span>
+                </button>
+                <button onclick="switchTab('report')" data-tab="report" class="nav-btn flex items-center space-x-2 px-4 py-2 rounded-lg transition-all">
+                    <i data-lucide="camera" class="w-4 h-4"></i><span class="font-medium">Defect Analysis</span>
+                </button>
+                <button onclick="switchTab('feedback')" data-tab="feedback" class="nav-btn flex items-center space-x-2 px-4 py-2 rounded-lg transition-all">
+                    <i data-lucide="message-square" class="w-4 h-4"></i><span class="font-medium">Feedback</span>
+                </button>
+            </div>
 
+            <div class="md:hidden">
+                <button onclick="toggleMenu()" class="p-2 text-indigo-900">
+                    <i data-lucide="menu" id="menu-icon"></i>
+                    <i data-lucide="x" id="close-icon" class="hidden"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</nav>             
                 <div class="md:hidden">
                     <button onclick="toggleMenu()" class="p-2 text-indigo-900">
                         <i data-lucide="menu" id="menu-icon"></i>
@@ -51,24 +60,22 @@
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         
-<div id="tab-home" class="tab-content fade-in space-y-12">
-    <div class="relative rounded-[2rem] overflow-hidden text-white p-8 md:p-20 shadow-2xl min-h-[550px] flex items-center bg-indigo-950">
-        <img src="Assests/bg.png" alt="Krypton Background" class="absolute inset-0 w-full h-full object-cover z-0 opacity-40">
-
-        <div class="relative z-10 md:w-3/5">
-            <span class="bg-indigo-500 text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-6 inline-block">Pioneer & N Series Range</span>
-            <h1 class="text-4xl md:text-6xl font-black mb-6 leading-tight">Certified Safety. <br>Modern Elegance.</h1>
-            <p class="text-lg text-indigo-100 mb-10 leading-relaxed">
-                Krypton electrical accessories by Central Industries PLC offer SLS 1000 and SLS 734 certified switches and sockets, designed for households, commercial spaces, and light industrial use.
-            </p>
-            <div class="flex flex-wrap gap-4">
-                <button onclick="switchTab('guidelines')" class="bg-white text-indigo-900 px-8 py-4 rounded-xl font-bold hover:scale-105 transition-transform flex items-center">
-                    Installation Guide <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
-                </button>
+        <div id="tab-home" class="tab-content fade-in space-y-12">
+            <div class="relative rounded-[2rem] overflow-hidden text-white p-8 md:p-20 shadow-2xl min-h-[550px] flex items-center bg-indigo-950">
+                <div class="relative z-10 md:w-3/5">
+                    <span class="bg-indigo-500 text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-6 inline-block">Pioneer & N Series Range</span>
+                    <h1 class="text-4xl md:text-6xl font-black mb-6 leading-tight">Certified Safety. <br>Modern Elegance.</h1>
+                    <p class="text-lg text-indigo-100 mb-10 leading-relaxed">
+                        Krypton electrical accessories by Central Industries PLC offer SLS 1000 and SLS 734 certified switches and sockets, designed for households, commercial spaces, and light industrial use.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <button onclick="switchTab('guidelines')" class="bg-white text-indigo-900 px-8 py-4 rounded-xl font-bold hover:scale-105 transition-transform flex items-center">
+                            Installation Guide <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+                        </button>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-</div>
+
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm">
                     <div class="w-12 h-12 bg-indigo-50 rounded-lg flex items-center justify-center mb-6 text-indigo-600"><i data-lucide="award"></i></div>
@@ -183,8 +190,7 @@
         <div class="max-w-7xl mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
                 <div>
-                    <img src="Assests/logo.png" alt="Krypton Logo" class="h-12 w-auto object-contain">
-					<br>
+                    <span class="text-xl font-black text-indigo-900 tracking-tighter block mb-4">KRYPTON</span>
                     <p class="text-slate-500 text-sm leading-relaxed">
                         A premium brand of Central Industries PLC. Certified electrical solutions for the modern Sri Lankan home.
                     </p>
@@ -201,9 +207,13 @@
                     <h4 class="font-black text-indigo-900 mb-6 uppercase text-xs tracking-widest">Head Office</h4>
                     <p class="text-sm text-slate-500">Central Industries PLC,<br>No. 312, Nawala Road, Rajagiriya, Sri Lanka.</p>
                 </div>
-          </div>
+            </div>
             <div class="pt-8 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center text-[10px] text-slate-400 font-bold uppercase tracking-widest">
-                <p>© 2026 Central Industries PLC.</p>               
+                <p>© 2026 Central Industries PLC. Krypton Division.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <button class="hover:text-indigo-900">Privacy</button>
+                    <button class="hover:text-indigo-900">Terms</button>
+                </div>
             </div>
         </div>
     </footer>
