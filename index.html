@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krypton | Central Industries PLC</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="min-h-screen bg-slate-50 font-sans text-slate-900">
+
+    <nav class="sticky top-0 z-50 bg-white border-b border-slate-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                
+                <div class="flex items-center space-x-3 cursor-pointer" onclick="switchTab('home')">
+                    <img src="Assests/logo.png" alt="Krypton Logo" class="h-12 w-auto object-contain">
+                </div>
+
+                <div class="hidden md:flex space-x-1" id="desktop-nav">
+                    <button onclick="switchTab('home')" data-tab="home" class="nav-btn active flex items-center space-x-2 px-4 py-2 rounded-lg transition-all">
+                        <i data-lucide="home" class="w-4 h-4"></i><span class="font-medium">Home</span>
+                    </button>
+                    <button onclick="switchTab('guidelines')" data-tab="guidelines" class="nav-btn flex items-center space-x-2 px-4 py-2 rounded-lg transition-all">
+                        <i data-lucide="shield-check" class="w-4 h-4"></i><span class="font-medium">SLS Guidelines</span>
+                    </button>
+                    <button onclick="switchTab('report')" data-tab="report" class="nav-btn flex items-center space-x-2 px-4 py-2 rounded-lg transition-all">
+                        <i data-lucide="camera" class="w-4 h-4"></i><span class="font-medium">Defect Analysis</span>
+                    </button>
+                    <button onclick="switchTab('feedback')" data-tab="feedback" class="nav-btn flex items-center space-x-2 px-4 py-2 rounded-lg transition-all">
+                        <i data-lucide="message-square" class="w-4 h-4"></i><span class="font-medium">Feedback</span>
+                    </button>
+                </div>
+
+                <div class="md:hidden">
+                    <button onclick="toggleMenu()" class="p-2 text-indigo-900">
+                        <i data-lucide="menu" id="menu-icon"></i>
+                        <i data-lucide="x" id="close-icon" class="hidden"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 p-4 space-y-2">
+            <button onclick="switchTab('home'); toggleMenu();" class="flex w-full items-center space-x-2 px-4 py-2 rounded-lg hover:bg-indigo-50">Home</button>
+            <button onclick="switchTab('guidelines'); toggleMenu();" class="flex w-full items-center space-x-2 px-4 py-2 rounded-lg hover:bg-indigo-50">Guidelines</button>
+            <button onclick="switchTab('report'); toggleMenu();" class="flex w-full items-center space-x-2 px-4 py-2 rounded-lg hover:bg-indigo-50">Report Issue</button>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        
+        <div id="tab-home" class="tab-content fade-in space-y-12">
+            <div class="relative rounded-[2rem] overflow-hidden text-white p-8 md:p-20 shadow-2xl min-h-[550px] flex items-center bg-indigo-950">
+                <div class="relative z-10 md:w-3/5">
+                    <span class="bg-indigo-500 text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-6 inline-block">Pioneer & N Series Range</span>
+                    <h1 class="text-4xl md:text-6xl font-black mb-6 leading-tight">Certified Safety. <br>Modern Elegance.</h1>
+                    <p class="text-lg text-indigo-100 mb-10 leading-relaxed">
+                        Krypton electrical accessories by Central Industries PLC offer SLS 1000 and SLS 734 certified switches and sockets, designed for households, commercial spaces, and light industrial use.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <button onclick="switchTab('guidelines')" class="bg-white text-indigo-900 px-8 py-4 rounded-xl font-bold hover:scale-105 transition-transform flex items-center">
+                            Installation Guide <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm">
+                    <div class="w-12 h-12 bg-indigo-50 rounded-lg flex items-center justify-center mb-6 text-indigo-600"><i data-lucide="award"></i></div>
+                    <h3 class="text-xl font-bold mb-2">SLS 1000 Certified</h3>
+                    <p class="text-slate-500">Rigorous testing for our N Series Gang Switches to ensure maximum electrical safety.</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm">
+                    <div class="w-12 h-12 bg-indigo-50 rounded-lg flex items-center justify-center mb-6 text-indigo-600"><i data-lucide="zap"></i></div>
+                    <h3 class="text-xl font-bold mb-2">13A Power Delivery</h3>
+                    <p class="text-slate-500">SLS 734 certified switched socket outlets built for heavy commercial and household loads.</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm">
+                    <div class="w-12 h-12 bg-indigo-50 rounded-lg flex items-center justify-center mb-6 text-indigo-600"><i data-lucide="layers"></i></div>
+                    <h3 class="text-xl font-bold mb-2">Pioneer Range</h3>
+                    <p class="text-slate-500">Elegant designs tailored for modern light-industrial and light-commercial aesthetics.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="tab-guidelines" class="tab-content hidden fade-in max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-black text-indigo-950 uppercase tracking-tight">Technical Compliance</h2>
+                <p class="text-slate-600 mt-2">Professional installation standards for Krypton electrical systems.</p>
+            </div>
+            
+            <div class="space-y-6">
+                <div class="bg-white p-8 rounded-2xl border-l-4 border-l-indigo-600 shadow-sm">
+                    <h3 class="text-2xl font-bold text-indigo-900 mb-4">N Series Gang Switches (SLS 1000)</h3>
+                    <ul class="space-y-4 text-slate-600">
+                        <li class="flex items-start"><i data-lucide="check" class="mr-3 text-green-500 w-5 h-5 flex-shrink-0"></i> Must be installed in a standard 35mm deep mounting box.</li>
+                        <li class="flex items-start"><i data-lucide="check" class="mr-3 text-green-500 w-5 h-5 flex-shrink-0"></i> Ensure terminal screws are firm but not over-torqued to avoid internal stress.</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-8 rounded-2xl border-l-4 border-l-blue-600 shadow-sm">
+                    <h3 class="text-2xl font-bold text-indigo-900 mb-4">13A Switched Sockets (SLS 734)</h3>
+                    <ul class="space-y-4 text-slate-600">
+                        <li class="flex items-start"><i data-lucide="check" class="mr-3 text-green-500 w-5 h-5 flex-shrink-0"></i> Earthing is mandatory for all SLS 734 socket installations.</li>
+                        <li class="flex items-start"><i data-lucide="check" class="mr-3 text-green-500 w-5 h-5 flex-shrink-0"></i> Maximum loop-in wiring: 2.5mm² twin and earth cable.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="tab-report" class="tab-content hidden fade-in max-w-2xl mx-auto">
+            <div class="bg-white p-10 rounded-[2.5rem] shadow-xl border border-slate-100">
+                <h2 class="text-3xl font-black text-indigo-900 mb-3 uppercase">Defect Analysis Portal</h2>
+                <p class="text-slate-500 mb-10">To process a claim, please provide photos of the installation wiring. This allows our technical team to verify SLS compliance.</p>
+
+                <div id="report-success" class="hidden bg-emerald-50 text-emerald-700 p-8 rounded-2xl border border-emerald-100 text-center zoom-in mb-6">
+                    <i data-lucide="check-circle" class="mx-auto mb-4 w-12 h-12"></i>
+                    <h3 class="text-xl font-bold">Analysis Logged</h3>
+                    <p>Our engineers will review the installation photos and contact you shortly.</p>
+                </div>
+
+                <form id="report-form" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <input name="fullName" required type="text" placeholder="Full Name" class="w-full px-4 py-3 rounded-xl border border-slate-200 outline-none focus:ring-2 focus:ring-indigo-500 transition-all" />
+                        <input name="email" required type="email" placeholder="Email Address" class="w-full px-4 py-3 rounded-xl border border-slate-200 outline-none focus:ring-2 focus:ring-indigo-500 transition-all" />
+                    </div>
+                    
+                    <select name="category" required class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white">
+                        <option value="" disabled selected>Select Krypton Series</option>
+                        <option value="N-Series">N Series (SLS 1000)</option>
+                        <option value="13A-Socket">13A Switched Socket (SLS 734)</option>
+                        <option value="Pioneer">Pioneer Range (SLS 734)</option>
+                    </select>
+
+                    <textarea name="description" required rows="4" placeholder="Describe the symptom (e.g., stiffness, sparking, or cosmetic defect)..." class="w-full px-4 py-3 rounded-xl border border-slate-200 outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+                    
+                    <div class="bg-indigo-50 border-2 border-dashed border-indigo-200 rounded-2xl p-8 text-center relative group">
+                        <i data-lucide="camera" class="mx-auto text-indigo-400 mb-2 group-hover:scale-110 transition-transform w-8 h-8"></i>
+                        <p id="file-name-display" class="text-sm text-indigo-900 font-bold">Upload Installation/Wiring Photo</p>
+                        <p class="text-xs text-indigo-400 mt-1">Required to identify manufacturing vs. installation error.</p>
+                        <input type="file" name="proof" id="file-upload" accept="image/*" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer" required />
+                    </div>
+
+                    <div class="flex items-start space-x-3 p-2 bg-slate-50 rounded-lg">
+                        <input type="checkbox" required id="verify" class="mt-1">
+                        <label for="verify" class="text-xs text-slate-500">I certify that this product was installed by a licensed electrician according to Central Industries PLC guidelines.</label>
+                    </div>
+
+                    <button type="submit" class="w-full bg-indigo-900 text-white py-4 rounded-xl font-bold hover:bg-indigo-800 transition-all shadow-lg active:scale-95">
+                        Submit for Technical Review
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <div id="tab-feedback" class="tab-content hidden fade-in grid grid-cols-1 lg:grid-cols-3 gap-10">
+            <div class="lg:col-span-2 space-y-8">
+                <h2 class="text-4xl font-black text-indigo-900 uppercase">Customer Experience</h2>
+                <div id="reviews-container" class="space-y-6"></div>
+            </div>
+
+            <div class="bg-white p-8 rounded-3xl shadow-xl border border-slate-100 h-fit sticky top-24">
+                <h3 class="text-2xl font-black text-indigo-900 mb-6 uppercase">Rate Krypton</h3>
+                <form id="feedback-form" class="space-y-4">
+                    <input id="feedback-name" required placeholder="Name" class="w-full px-4 py-2 rounded-xl border border-slate-200 outline-none focus:ring-1 focus:ring-indigo-500" />
+                    <select id="feedback-rating" class="w-full px-4 py-2 rounded-xl border border-slate-200 bg-white">
+                        <option value="5">5 - Exceptional Quality</option>
+                        <option value="4">4 - Very Good</option>
+                        <option value="3">3 - Standard</option>
+                    </select>
+                    <textarea id="feedback-comment" required placeholder="Comment on durability or design..." class="w-full px-4 py-2 rounded-xl border border-slate-200 outline-none focus:ring-1 focus:ring-indigo-500" rows="4"></textarea>
+                    <button type="submit" class="w-full bg-indigo-900 text-white py-3 rounded-xl font-bold hover:bg-indigo-800 transition-colors">Post Review</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-white border-t border-slate-200 pt-16 pb-8 mt-20">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
+                <div>
+                    <img src="Assests/logo.png" alt="Krypton Logo" class="h-12 w-auto object-contain">
+					<br>
+                    <p class="text-slate-500 text-sm leading-relaxed">
+                        A premium brand of Central Industries PLC. Certified electrical solutions for the modern Sri Lankan home.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-black text-indigo-900 mb-6 uppercase text-xs tracking-widest">Compliance</h4>
+                    <ul class="space-y-3 text-sm text-slate-500">
+                        <li>SLS 1000 (Gang Switches)</li>
+                        <li>SLS 734 (13A Sockets)</li>
+                        <li>ISO 9001 Quality Certified</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-black text-indigo-900 mb-6 uppercase text-xs tracking-widest">Head Office</h4>
+                    <p class="text-sm text-slate-500">Central Industries PLC,<br>No. 312, Nawala Road, Rajagiriya, Sri Lanka.</p>
+                </div>
+          </div>
+            <div class="pt-8 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center text-[10px] text-slate-400 font-bold uppercase tracking-widest">
+                <p>© 2026 Central Industries PLC.</p>               
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

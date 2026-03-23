@@ -1,0 +1,29 @@
+/* Custom Animations */
+.fade-in { animation: fadeIn 0.4s ease-out; }
+.zoom-in { animation: zoomIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes zoomIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Active Nav States */
+.nav-btn.active {
+    background-color: #312e81;
+    color: white !important;
+}
+
+.nav-btn:not(.active):hover {
+    background-color: #f1f5f9;
+    color: #312e81;
+}
+
+/* Custom Scrollbar for modern look */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #f8fafc; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
